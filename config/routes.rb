@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  scope :callbacks, controller: :callbacks, format: false do
+    post :telegram
+  end
 end
