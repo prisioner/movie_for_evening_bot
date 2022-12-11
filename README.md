@@ -1,24 +1,47 @@
-# README
+# Movie for evening telegram bot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Описание
 
-Things you may want to cover:
+Телеграм бот, который рекомендует, какой фильм посмотреть
 
-* Ruby version
+### Ruby version
 
-* System dependencies
+```
+ruby 3.1.2
+```
 
-* Configuration
+### Rails version
 
-* Database creation
+```
+rails 7.0.4
+```
 
-* Database initialization
+Postgresql version
 
-* How to run the test suite
+```
+postgresql 12.12
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Первый запуск
 
-* Deployment instructions
+```
+gem install bundler
+bundle install
+bundle exec rails db:create
+bundle exec rails db:migrate
+copy .env.template .env
+```
 
-* ...
+Заполнить переменные окружения в `.env`
+
+### Загрузить данные с [IMDB](https://www.imdb.com/chart/top/)
+
+```
+bundle exec rake movies:update_from_imdb
+```
+
+### Запуск сервера
+
+```
+bundle exec rails s
+```
