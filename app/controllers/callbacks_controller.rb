@@ -16,6 +16,6 @@ class CallbacksController < ApplicationController
   end
 
   def telegram_header
-    request.headers['HTTP_X_TELEGRAM_BOT_API_SECRET_TOKEN']
+    request.headers["HTTP_X_TELEGRAM_BOT_API_SECRET_TOKEN"]
   end
 end
